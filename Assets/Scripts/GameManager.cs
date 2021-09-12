@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    int Rest = 1;
-    int Escena = 1;
+    
     bool gamePaused = false;
     bool gameOver = false;
     [SerializeField] Spaceship player;
@@ -33,9 +32,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void StartGame()
+    public void StartGame(int nivel)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(nivel);
         Time.timeScale = 1;
     }
     public void BackToMainMenu()
@@ -45,19 +44,6 @@ public class GameManager : MonoBehaviour
 
     }
   
-    public void LevelTwo()
-    {
- 
-            SceneManager.LoadScene(2);
-            Time.timeScale = 1;
-
-    }
-    public void LevelThree()
-    {
-
-            SceneManager.LoadScene(3);
-            Time.timeScale = 1;
-    }
 
     void PauseGame()
     {

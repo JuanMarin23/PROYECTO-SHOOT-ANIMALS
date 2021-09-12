@@ -136,4 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  movingRigth: 1
+  movingRight: 0
+  gm: {fileID: 0}
+  PuntosVida: 0
+  TimePower: {fileID: 0}
+  TimeScale: 5

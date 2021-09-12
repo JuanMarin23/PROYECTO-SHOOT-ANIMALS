@@ -138,3 +138,5 @@ MonoBehaviour:
   speed: 2
   movingRight: 0
   gm: {fileID: 0}
+  PuntosVida: 1
+  Cantpoder: 1

@@ -1158,7 +1158,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &610595319
+--- !u!1001 &600182480
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1171,15 +1171,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7861475822132487389, guid: a01552edd38f29e4cb92c68c868e03a6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7861475822132487389, guid: a01552edd38f29e4cb92c68c868e03a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08951065
+      value: -0.40336296
       objectReference: {fileID: 0}
     - target: {fileID: 7861475822132487389, guid: a01552edd38f29e4cb92c68c868e03a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8258675
+      value: -1.8526449
       objectReference: {fileID: 0}
     - target: {fileID: 7861475822132487389, guid: a01552edd38f29e4cb92c68c868e03a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1959,7 +1959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7861475822132487389, guid: a01552edd38f29e4cb92c68c868e03a6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7861475822132487389, guid: a01552edd38f29e4cb92c68c868e03a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2092,12 +2092,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 124217751}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LevelTwo
-        m_Mode: 1
+        m_MethodName: StartGame
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
