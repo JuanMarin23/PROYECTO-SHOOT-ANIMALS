@@ -10,12 +10,15 @@ public class Animal : MonoBehaviour
     [SerializeField] int PuntosVida;
     int Cantpoder = 1;
     int copia2;
-    
+
     float TimeScale = 5;
     bool Contador = true;
     int copia;
     float tiempo = 0;
     float minX, maxX;
+
+    public bool gamePaused = false;
+
 
 
     // Start is called before the first frame update
@@ -29,14 +32,15 @@ public class Animal : MonoBehaviour
         copia = PuntosVida;
         copia2 = Cantpoder;
     }
-    void Update()
-        
+    void Update()   
     {
-        if(Contador == true)
+
+        if (!gamePaused)
         {
-            TiempoPower();
+            PoderTiempo();
         }
-        if (movingRight)
+
+            if (movingRight)
         {
             Vector2 movimiento = new Vector2(speed * Time.deltaTime, 0);
             transform.Translate(movimiento);
@@ -56,27 +60,32 @@ public class Animal : MonoBehaviour
         }
 
     }
-    void TiempoPower()
+  
+    void PoderTiempo()
     {
-            if (Input.GetKeyDown(KeyCode.R) && Time.unscaledTime >= tiempo)
+        if (Contador == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E) && Time.unscaledTime >= tiempo)
             {
-            
-            Time.timeScale = 0.5f;
-            tiempo = Time.unscaledTime + TimeScale ;
-             PuntosVida = 1;
-            copia2 ++;
+
+                Time.timeScale = 0.5f;
+                tiempo = Time.unscaledTime + TimeScale;
+               
+                copia2++;
             }
             if (tiempo <= Time.unscaledTime)
             {
-           Time.timeScale = 1;
-            PuntosVida = copia;
-              if (copia2 == 4)
-              {
-                Contador = false;
-              }
+                Time.timeScale = 1;
+               
+                if (copia2 == 4)
+                {
+                    Contador = false;
+                }
             }
+        }
+
     }
-private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject objeto = collision.gameObject;
         string etiqueta = objeto.tag;
@@ -89,7 +98,9 @@ private void OnCollisionEnter2D(Collision2D collision)
                 (GameObject.Find("GameManager").GetComponent<GameManager>()).ReducirNumEnemigos();
                 Destroy(this.gameObject);
             }
+           
         }
+       
     }
   
 }

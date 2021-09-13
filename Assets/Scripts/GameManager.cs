@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Spaceship player;
     [SerializeField] GameObject pauseUI;
     [SerializeField] GameObject gameOverUI;
+    
     [SerializeField] int numEnemies;
 
     
@@ -51,6 +52,8 @@ public class GameManager : MonoBehaviour
 
         player.gamePaused = gamePaused;
 
+      
+
         pauseUI.SetActive(gamePaused);
 
         Time.timeScale = gamePaused ? 0 : 1;
@@ -61,15 +64,10 @@ public class GameManager : MonoBehaviour
         numEnemies --;
         if (numEnemies < 1)
         {
-            Ganar();
+            gameOverUI.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
-    void Ganar()
-    {
-        gameOver = true;
-        Time.timeScale = 0;
-        player.gamePaused = true;
-        gameOverUI.SetActive(true);
-    }
+ 
 }
